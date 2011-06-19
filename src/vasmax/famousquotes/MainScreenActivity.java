@@ -9,10 +9,5 @@ public class MainScreenActivity extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
-    }    
-    /** Called when the activity destroyed. */    
-    @Override
-    public void onDestroy() {
-    	super.onDestroy();
     }
 }
