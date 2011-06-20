@@ -10,24 +10,18 @@ import org.xmlpull.v1.XmlPullParserFactory;
 import android.util.Xml;
 
 
-public class Quote {
-	
+public class Quote 
+{	
 	public String Text;
 	
 	public String Author;
 	
-	public String Sender;
-	
-	public String SenderLink;
-	
 	public Quote () { }
 	
-	public Quote(String text, String author, String sender, String senderLink) 
+	public Quote(String text, String author) 
 	{
 		Text = text;
 		Author = author;
-		Sender = sender;
-		SenderLink = senderLink;
 	}
 	
 	public static Quote Parse(String forsmaticResponseString) throws XmlPullParserException, IOException
@@ -43,11 +37,23 @@ public class Quote {
 		
 		while (eventType != XmlPullParser.END_DOCUMENT)
 		{
-			eventType = xmlParser.next();
-			//TODO: Parse nodes
+			if (eventType == XmlPullParser.START_TAG)
+			{
+				String nodeName = xmlParser.getName();
+				if (nodeName.equals("quoteText")) 
+				{ 
+					xmlParser.next();
+					quote.Text = xmlParser.getText();
+				}
+				else if (nodeName.equals("quoteAuthor"))
+				{
+					xmlParser.next();
+					quote.Author = xmlParser.getText();
+				}
+			}			
+			eventType = xmlParser.next();			
 		}
 		
 		return quote;
-	}
-
+	}	
 }
