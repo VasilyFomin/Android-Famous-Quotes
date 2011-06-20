@@ -6,4 +6,5 @@
     <string name="share_button_label">Share</string>
     <string name="about_button_label">About</string>
     <string name="bookmark_button_label">Bookmark</string>
+    <string name="settings_screen_title">Settings</string>
 </resources>
