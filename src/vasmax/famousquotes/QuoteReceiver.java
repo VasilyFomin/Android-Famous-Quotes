@@ -86,6 +86,7 @@ public class QuoteReceiver
 			reader = new BufferedReader(new InputStreamReader(response.getEntity().getContent()));
 			
 			
+			
 			String temp = "";
 			
 			while ((temp = reader.readLine()) != null)
