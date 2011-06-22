@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Famous Quotes</string>
+    <string name="app_name">Android famous Quotes</string>
     <string name="refresh_button_label">Refresh</string>
     <string name="settings_button_label">Settings</string>
     <string name="share_button_label">Share</string>
     <string name="about_button_label">About</string>
     <string name="bookmark_button_label">Bookmark</string>
+    <string name="about_text"> \ This is an Android <i><b>famous</b></i> quote client.</string>
+    <string name="about_dialog_title">About Android famous quotes.</string>
     <string name="settings_screen_title">Settings</string>
 </resources>

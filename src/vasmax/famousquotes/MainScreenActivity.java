@@ -30,7 +30,54 @@ public class MainScreenActivity extends Activity implements OnClickListener {
         
         Button refreshButton = (Button)findViewById( R.id.refresh_button );
         refreshButton.setOnClickListener( this );       
+        
+	    /* Setup click listeners for all buttons. */
+	    Button settingsButton = (Button)findViewById( R.id.settings_button );
+	    settingsButton.setOnClickListener( this );
+	    
+	    Button aboutButton = (Button)findViewById( R.id.about_button );
+	    aboutButton.setOnClickListener( this );
+	    
+	    Button shareButton = (Button) findViewById( R.id.share_button );
+	    shareButton.setOnClickListener( this );
+	    
+	    Button bookmarkButton = (Button)findViewById( R.id.bookmark_button );
+	    bookmarkButton.setOnClickListener( this );
+	    
+	    Button refreshButton = (Button)findViewById( R.id.refresh_button );
+	    refreshButton.setOnClickListener( this ); 
     }
+
+	@Override
+	public void onClick(View v) {
+		switch ( v.getId() ) {
+		case R.id.bookmark_button:
+			// TODO: Implement bookmark_button event handler.				
+			break;
+		
+		case R.id.settings_button:
+			// TODO: Implement settings_button event handler.				
+			break;
+			
+		case R.id.share_button:
+			// TODO: Implement share_button event handler.			
+			break;
+				
+		case R.id.refresh_button:
+			// TODO: Implement refresh_button event handler.	
+			break;
+		case R.id.about_button:
+			Intent aboutDialogIntent = new Intent( this, AboutDialogActivity.class );
+			startActivity( aboutDialogIntent );
+			break;
+	
+		default:
+			// TODO: Implement default case.	
+			break;
+		}
+	}
+}
+
    
 	@Override
 	public void onClick(View v) {
