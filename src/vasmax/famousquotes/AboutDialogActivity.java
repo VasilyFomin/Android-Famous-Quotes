@@ -18,5 +18,4 @@ public class AboutDialogActivity extends Activity {
 		super.onCreate( savedInstanceState );
 		setContentView( R.layout.about_dialog_activity );
 	}
-	
 }

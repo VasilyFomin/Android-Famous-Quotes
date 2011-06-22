@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+	xmlns:android="http://schemas.android.com/apk/res/android">	
+	<PreferenceCategory
+		android:title = "@string/service_settings_category">
+		<ListPreference
+        	android:key="language_settings"
+            android:title="@string/language_list_title"
+            android:summary="@string/laguage_list_summary"
+            android:entries="@array/language_list_entries"
+            android:entryValues="@array/language_list_entries_values"
+            android:dialogTitle="@string/language_list_dialog_title" 
+       	    android:checkableBehavior = "single" />		
+	</PreferenceCategory>	
+	
+	<PreferenceCategory
+		android:title = "@string/system_settings_category">
+		<CheckBoxPreference
+			android:key = "play_sound"
+			android:title = "@string/sound_settings_title"
+			android:summary = "@string/sound_settings_summary"
+			android:defaultValue = "false" />     
+		<CheckBoxPreference
+			android:key = "make_vibro"
+			android:title = "@string/vibro_settings_title"
+			android:summary = "@string/vibro_settings_summary"
+			android:defaultValue = "false" />     
+		<CheckBoxPreference
+			android:key = "notify_alert"
+			android:title = "@string/notify_settings_title"
+			android:summary = "@string/notify_settings_summary"
+			android:defaultValue = "true" /> 			
+		<ListPreference
+        	android:key="theme_settings"
+            android:title="@string/theme_list_title"
+            android:summary="@string/theme_list_summary"
+            android:entries="@array/theme_list_entries"
+            android:entryValues="@array/theme_list_entries_values"
+       	    android:checkableBehavior = "single" />		   	
+	</PreferenceCategory>	
+</PreferenceScreen>

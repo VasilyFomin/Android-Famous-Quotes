@@ -43,7 +43,8 @@ public class MainScreenActivity extends Activity implements OnClickListener {
 			break;
 		
 		case R.id.settings_button:
-			// TODO: Implement settings_button event handler.				
+			Intent settingsScreenIntent = new Intent( this, PreferencesActivity.class );
+			startActivity( settingsScreenIntent );
 			break;
 			
 		case R.id.share_button:
@@ -83,6 +84,7 @@ public class MainScreenActivity extends Activity implements OnClickListener {
 	 * @param serviceId The number in list of clicked item. From 0 to last.
 	 */
 	private void shareWith( final int serviceId ) {
+		// TODO: Implement ShareFunction functionality.
 		Log.d( "ShareWithFunction", "clicked on: " + serviceId );
 	}
 }

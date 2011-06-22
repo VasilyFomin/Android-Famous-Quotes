@@ -16,9 +16,8 @@
         </activity>
         <activity android:name = ".AboutDialogActivity"
         	android:label = "@string/about_dialog_title"
-        	android:theme = "@android:style/Theme.Dialog">
-        </activity>
-        <activity android:label="@string/settings_screen_title" android:name="SettingsScreenActivity"></activity>
-
+        	android:theme = "@android:style/Theme.Dialog"/>
+        <activity android:name = ".PreferencesActivity"
+        	android:label = "@string/settings_screen_label"/>
     </application>
 </manifest>
