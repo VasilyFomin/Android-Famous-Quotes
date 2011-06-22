@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<array name = "share_services">
+		<item>@string/share_label_vkontakte</item>
+		<item>@string/share_label_facebook</item>
+		<item>@string/share_label_twitter</item>
+		<item>@string/share_label_sms</item>
+	</array>    
+</resources>

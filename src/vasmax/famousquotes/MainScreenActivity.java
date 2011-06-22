@@ -1,6 +1,8 @@
 package vasmax.famousquotes;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -32,6 +34,7 @@ public class MainScreenActivity extends Activity implements OnClickListener {
         refreshButton.setOnClickListener( this );              
     }
 
+    /* Called when buttons clicked. */
 	@Override
 	public void onClick(View v) {
 		switch ( v.getId() ) {
@@ -44,7 +47,7 @@ public class MainScreenActivity extends Activity implements OnClickListener {
 			break;
 			
 		case R.id.share_button:
-			// TODO: Implement share_button event handler.			
+			openShareWithDialog();			
 			break;
 				
 		case R.id.refresh_button:
@@ -59,5 +62,27 @@ public class MainScreenActivity extends Activity implements OnClickListener {
 			// TODO: Implement default case.	
 			break;
 		}
+	}
+	
+	/* Called when user clicks Share button. 
+	 * Creates alert dialog and populate it with items from resources. 
+	 */
+	private void openShareWithDialog() {
+		new AlertDialog.Builder( this )
+		.setTitle( R.string.share_with_dialog_title )
+		.setItems( R.array.share_services, new DialogInterface.OnClickListener() {			
+			@Override
+			public void onClick(DialogInterface dialog, int which) {
+				shareWith( which );				
+			}
+		})
+		.show();
+	}
+	
+	/* Called from Share menu.
+	 * @param serviceId The number in list of clicked item. From 0 to last.
+	 */
+	private void shareWith( final int serviceId ) {
+		Log.d( "ShareWithFunction", "clicked on: " + serviceId );
 	}
 }

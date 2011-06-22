@@ -9,4 +9,9 @@
     <string name="about_text"> \ This is an Android <i><b>famous</b></i> quote client.</string>
     <string name="about_dialog_title">About Android famous quotes.</string>
     <string name="settings_screen_title">Settings</string>
+    <string name="share_label_vkontakte">VKontakte</string>
+    <string name="share_label_facebook">Facebook</string>
+    <string name="share_label_twitter">Twitter</string>
+    <string name="share_label_sms">SMS/Email</string>
+    <string name="share_with_dialog_title">Share with:</string>
 </resources>
