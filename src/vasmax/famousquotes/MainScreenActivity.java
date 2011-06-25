@@ -28,7 +28,7 @@ public class MainScreenActivity extends Activity implements OnClickListener {
         Button bookmarkButton = (Button)findViewById( R.id.bookmark_button );
         bookmarkButton.setOnClickListener( this );
         
-        Button refreshButton = (Button)findViewById( R.id.refresh_button );
+        ImageButton refreshButton = (ImageButton)findViewById( R.id.wiki_button );
         refreshButton.setOnClickListener( this );              
     }
 
@@ -49,7 +49,7 @@ public class MainScreenActivity extends Activity implements OnClickListener {
 			openShareWithDialog();			
 			break;
 				
-		case R.id.refresh_button:
+		case R.id.wiki_button:
 			// TODO: Implement refresh_button event handler.	
 			break;
 			

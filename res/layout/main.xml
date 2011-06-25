@@ -25,7 +25,8 @@
 	<TableRow
 		android:gravity = "left"
 		android:layout_width = "wrap_content"
-		android:layout_height = "wrap_content" >
+		android:layout_height = "wrap_content" 
+		android:padding = "20dip" >
 		<ImageButton
 			android:id = "@+id/settings_button"			
 			android:layout_width = "wrap_content"
@@ -38,12 +39,14 @@
 			android:layout_width = "wrap_content"
 			android:layout_height = "wrap_content"	
 			android:src = "@drawable/share_button"
-			android:background = "#00000000"/>
-		<Button
-			android:id = "@+id/refresh_button"
-			android:text = "@string/refresh_button_label"
+			android:background = "#00000000"	/>
+		<ImageButton
+			android:id = "@+id/wiki_button"
 			android:layout_width = "wrap_content"
-			android:layout_height = "wrap_content"	/>	
+			android:layout_height = "wrap_content"
+			android:gravity = "right"
+			android:src = "@drawable/wiki_button"
+			android:background = "#00000000"	/>
 	</TableRow>
 </TableLayout>
 

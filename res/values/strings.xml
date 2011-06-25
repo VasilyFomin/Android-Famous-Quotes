@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Android famous Quotes</string>
-    <string name="refresh_button_label">Refresh</string>
     <string name="settings_button_label">Settings</string>
     <string name="share_button_label">Share</string>
     <string name="about_button_label">About</string>
