@@ -7,17 +7,11 @@
     <string name="share_label_sms">SMS/Email</string>
     <string name="share_with_dialog_title">Share with:</string>
     <string name="settings_screen_label">Settings</string>
-    <string name="sound_settings_title">Sound</string>
-    <string name="sound_settings_summary">Play sound when quote updated.</string>
-    <string name="vibro_settings_title">Use vibro</string>
-    <string name="notify_settings_title">Use notification area.</string>
-    <string name="notify_settings_summary">Add quote to notification area when it updated.</string>
-    <string name="vibro_settings_summary">Make vibration when quote is updated.</string>
-    <string name="system_settings_category">System settings</string>
-    <string name="service_settings_category">Service settings</string>
     <string name="laguage_list_summary">Set interface and quotes language,</string>
     <string name="language_list_title">Language</string>
     <string name="language_list_dialog_title">Choose language</string>
-    <string name="theme_list_title">Theme</string>
-    <string name="theme_list_summary">Setuo current programm theme.</string>
+    <string name="night_mode_title">Night mode</string>
+    <string name="night_mode_summary">Change programm theme to night mode.</string>
+    <string name="silent_mode_title">Silent mode</string>
+    <string name="silent_mode_summary">Disable programm sounds.</string>
 </resources>
