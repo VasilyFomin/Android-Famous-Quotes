@@ -9,6 +9,7 @@ import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.ImageButton;
 
 public class MainScreenActivity extends Activity implements OnClickListener {
     /** Called when the activity is first created. */
@@ -18,7 +19,7 @@ public class MainScreenActivity extends Activity implements OnClickListener {
         setContentView(R.layout.main);
         
         // Setup click listeners for all buttons
-        Button settingsButton = (Button)findViewById( R.id.settings_button );
+        ImageButton settingsButton = (ImageButton)findViewById( R.id.settings_button );
         settingsButton.setOnClickListener( this );
         
         Button aboutButton = (Button)findViewById( R.id.about_button );
