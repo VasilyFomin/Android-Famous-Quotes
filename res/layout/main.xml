@@ -7,7 +7,6 @@
     <!--  Bookmarks button. --> 
     <ImageButton
 		android:id = "@+id/bookmark_button"
-		android:text = "@string/bookmark_button_label"	
 		android:layout_width = "wrap_content"	
 		android:layout_height = "wrap_content"		
 		android:layout_alignParentTop = "true"
@@ -66,7 +65,6 @@
 		<!-- Share button. -->
 		<ImageButton
 			android:id = "@+id/share_button"
-			android:text = "@string/share_button_label"
 			android:layout_toRightOf = "@id/settings_button"
 			android:layout_width = "wrap_content"
 			android:layout_height = "wrap_content"	
