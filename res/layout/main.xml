@@ -31,11 +31,13 @@
 			android:layout_height = "wrap_content"
 			android:src = "@drawable/settings_button"
 			android:background = "#00000000"	/>
-		<Button
+		<ImageButton
 			android:id = "@+id/share_button"
 			android:text = "@string/share_button_label"
 			android:layout_width = "wrap_content"
-			android:layout_height = "wrap_content"	/>
+			android:layout_height = "wrap_content"	
+			android:src = "@drawable/share_button"
+			android:background = "#00000000"/>
 		<Button
 			android:id = "@+id/refresh_button"
 			android:text = "@string/refresh_button_label"
