@@ -22,9 +22,6 @@ public class MainScreenActivity extends Activity implements OnClickListener {
         ImageButton settingsButton = (ImageButton)findViewById( R.id.settings_button );
         settingsButton.setOnClickListener( this );
         
-        Button aboutButton = (Button)findViewById( R.id.about_button );
-        aboutButton.setOnClickListener( this );
-        
         ImageButton shareButton = (ImageButton) findViewById( R.id.share_button );
         shareButton.setOnClickListener( this );
         
@@ -55,11 +52,7 @@ public class MainScreenActivity extends Activity implements OnClickListener {
 		case R.id.refresh_button:
 			// TODO: Implement refresh_button event handler.	
 			break;
-		case R.id.about_button:
-			Intent aboutDialogIntent = new Intent( this, AboutDialogActivity.class );
-			startActivity( aboutDialogIntent );
-			break;
-	
+			
 		default:
 			// TODO: Implement default case.	
 			break;

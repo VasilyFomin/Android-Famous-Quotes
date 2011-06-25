@@ -2,7 +2,8 @@
 <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="fill_parent"
-    android:layout_height="fill_parent"	>    
+    android:layout_height="fill_parent"
+    android:background = "#ffffffff"	>    
 	<TableRow
 		android:gravity = "right">
 		<Button
@@ -22,7 +23,7 @@
 	</TableRow>
 	
 	<TableRow
-		android:gravity = "center_horizontal"
+		android:gravity = "left"
 		android:layout_width = "wrap_content"
 		android:layout_height = "wrap_content" >
 		<ImageButton
@@ -42,12 +43,7 @@
 			android:id = "@+id/refresh_button"
 			android:text = "@string/refresh_button_label"
 			android:layout_width = "wrap_content"
-			android:layout_height = "wrap_content"	/>
-		<Button
-			android:id = "@+id/about_button"	
-			android:text = "@string/about_button_label"
-			android:layout_width = "wrap_content"
-			android:layout_height = "wrap_content"	/>					
+			android:layout_height = "wrap_content"	/>	
 	</TableRow>
 </TableLayout>
 
