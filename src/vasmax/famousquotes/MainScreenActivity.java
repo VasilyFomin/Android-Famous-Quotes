@@ -25,7 +25,7 @@ public class MainScreenActivity extends Activity implements OnClickListener {
         ImageButton shareButton = (ImageButton) findViewById( R.id.share_button );
         shareButton.setOnClickListener( this );
         
-        Button bookmarkButton = (Button)findViewById( R.id.bookmark_button );
+        ImageButton bookmarkButton = (ImageButton)findViewById( R.id.bookmark_button );
         bookmarkButton.setOnClickListener( this );
         
         ImageButton refreshButton = (ImageButton)findViewById( R.id.wiki_button );
