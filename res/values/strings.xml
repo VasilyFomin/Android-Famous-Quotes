@@ -5,7 +5,7 @@
     <string name="share_label_facebook">Facebook</string>
     <string name="share_label_twitter">Twitter</string>
     <string name="share_label_sms">SMS</string>
-    <string name="share_with_dialog_title">Share with:</string>
+    <string name="share_label_email">Email</string><string name="share_with_dialog_title">Share with:</string>
     <string name="settings_screen_label">Settings</string>
     <string name="laguage_list_summary">Set interface and quotes language,</string>
     <string name="language_list_title">Language</string>
@@ -14,4 +14,5 @@
     <string name="night_mode_summary">Change programm theme to night mode.</string>
     <string name="silent_mode_title">Silent mode</string>
     <string name="silent_mode_summary">Disable programm sounds.</string>
+    
 </resources>

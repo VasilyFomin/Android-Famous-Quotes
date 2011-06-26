@@ -87,38 +87,51 @@ public class MainScreenActivity extends Activity implements OnClickListener {
 	 * @param serviceId The number in list of clicked item. From 0 to last.
 	 */
 	private void shareWith( final int serviceId ) {
-		// TODO: Implement ShareFunction functionality.		
 		Log.d( "ShareWithFunction", "clicked on: " + serviceId );
-		switch ( serviceId ) {
 		
-		// SMS Action
+		// Get Quote Text
+		String quoteText = (String)( ( (TextView)findViewById( R.id.quote_view ) ).getText() );
+		Log.i( "QUOTE_TEXT", quoteText );
+		
+		// Get Quote Author
+		String quoteAuthor = (String)( ( (TextView)findViewById( R.id.author_view ) ).getText() );
+		
+		// Make String to send share service.
+		String strToSend;
+		if ( quoteAuthor != null ) {
+			Log.i( "QUOTE_AUTHOR", quoteAuthor );		
+			strToSend = quoteText + quoteAuthor;
+		} else {
+			strToSend = quoteText;
+		}
+		
+		switch ( serviceId ) {		
+		/* SMS Action. */
 		// TODO: Fix problems with Cyrillic letters.
-		case 3:
-			
-			// Get Quote Text
-			String quoteText = (String)( ( (TextView)findViewById( R.id.quote_view ) ).getText() );
-			Log.i( "QUOTE_TEXT", quoteText );
-			
-			// Get Quote Author
-			String quoteAuthor = (String)( ( (TextView)findViewById( R.id.author_view ) ).getText() );
-			if ( quoteAuthor != null ) {
-				Log.i( "QUOTE_AUTHOR", quoteAuthor );				
-			}				
+		case 3:			
 
 			// Create SMS sender Intent
-			Intent smsSendIntent = new Intent(Intent.ACTION_VIEW);
+			final Intent smsSendIntent = new Intent(Intent.ACTION_VIEW);
 			smsSendIntent.setType("vnd.android-dir/mms-sms");
 			
-			// Check Author String, and send SMS
-			if (quoteAuthor != null) {
-				smsSendIntent.putExtra("sms_body", quoteText + " " + quoteAuthor);				
-			} else {
-				smsSendIntent.putExtra("sms_body", quoteText );
-			}
-			
+			// Put body text.
+			smsSendIntent.putExtra("sms_body", strToSend );
+						
 			// Start SMS send Activity.
 			startActivity( smsSendIntent );
 			
+			break;
+			
+		/* Email Action. */
+		// TODO: Check Email on Device.
+		case 4:
+			// Create Email send Intent.
+			final Intent emailSendIntent = new Intent(android.content.Intent.ACTION_SEND);
+			emailSendIntent.setType("plain/text");
+			//emailSendIntent.putExtra(android.content.Intent.EXTRA_EMAIL, new String[]{"vasili.fomin@gmail.com"});						
+			emailSendIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, "I have founded Great Quote!" );
+			emailSendIntent.putExtra(android.content.Intent.EXTRA_TEXT, strToSend);
+			startActivity( emailSendIntent );
 			break;
 
 		default:

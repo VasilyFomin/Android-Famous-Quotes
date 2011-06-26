@@ -6,6 +6,7 @@
 		<item>@string/share_label_facebook</item>
 		<item>@string/share_label_twitter</item>
 		<item>@string/share_label_sms</item>
+		<item>@string/share_label_email</item>
 	</array>
 	    
 	<!-- Used in the Settings Activity as list of available languages. -->
