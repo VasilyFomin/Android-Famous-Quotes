@@ -30,8 +30,7 @@
 			android:layout_height = "wrap_content"	
 			android:textSize = "18dip"
 			android:textColor = "#000000"
-			android:typeface = "serif"
-			android:text = "Услышав удар колокола в ночной тишине, пробуждаешься от сна, в котором видишь сны. Созерцая отражение луны на глади вод, прозреваешь себя вне себя."	/>
+			android:typeface = "serif" />
 			
 		<!-- Author text view. -->		
 		<TextView
@@ -41,8 +40,7 @@
 			android:layout_height = "wrap_content"	
 			android:gravity = "left"							
 			android:textSize = "16dip"
-			android:typeface = "serif"
-			android:text = "Хун Цзычен" />
+			android:typeface = "serif"/>
 	</RelativeLayout>		
 		
 	<!-- Layout for Settings, Share, Wiki buttons. -->		

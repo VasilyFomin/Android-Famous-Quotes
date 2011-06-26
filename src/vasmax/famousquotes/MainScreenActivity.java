@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.TextView;
 
 public class MainScreenActivity extends Activity implements OnClickListener {
     /** Called when the activity is first created. */
@@ -17,6 +18,14 @@ public class MainScreenActivity extends Activity implements OnClickListener {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
+        
+        /*** Debug proposes. ***/
+        TextView quoteView = (TextView)findViewById( R.id.quote_view );
+        quoteView.setText( "This is Quote text and it in English, because we have problems with cyrillic when sending SMS." );
+        
+        TextView authorView = (TextView)findViewById( R.id.author_view );
+        authorView.setText( "Author" );        
+        /************************/
         
         // Setup click listeners for all buttons
         ImageButton settingsButton = (ImageButton)findViewById( R.id.settings_button );
@@ -78,7 +87,43 @@ public class MainScreenActivity extends Activity implements OnClickListener {
 	 * @param serviceId The number in list of clicked item. From 0 to last.
 	 */
 	private void shareWith( final int serviceId ) {
-		// TODO: Implement ShareFunction functionality.
+		// TODO: Implement ShareFunction functionality.		
 		Log.d( "ShareWithFunction", "clicked on: " + serviceId );
+		switch ( serviceId ) {
+		
+		// SMS Action
+		// TODO: Fix problems with Cyrillic letters.
+		case 3:
+			
+			// Get Quote Text
+			String quoteText = (String)( ( (TextView)findViewById( R.id.quote_view ) ).getText() );
+			Log.i( "QUOTE_TEXT", quoteText );
+			
+			// Get Quote Author
+			String quoteAuthor = (String)( ( (TextView)findViewById( R.id.author_view ) ).getText() );
+			if ( quoteAuthor != null ) {
+				Log.i( "QUOTE_AUTHOR", quoteAuthor );				
+			}				
+
+			// Create SMS sender Intent
+			Intent smsSendIntent = new Intent(Intent.ACTION_VIEW);
+			smsSendIntent.setType("vnd.android-dir/mms-sms");
+			
+			// Check Author String, and send SMS
+			if (quoteAuthor != null) {
+				smsSendIntent.putExtra("sms_body", quoteText + " " + quoteAuthor);				
+			} else {
+				smsSendIntent.putExtra("sms_body", quoteText );
+			}
+			
+			// Start SMS send Activity.
+			startActivity( smsSendIntent );
+			
+			break;
+
+		default:
+			// TODO: Make default handler.
+			break;
+		}
 	}
 }
