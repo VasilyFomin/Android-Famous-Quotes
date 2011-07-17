@@ -35,6 +35,10 @@ public class QuoteDownloader {
 		m_ApiUrl = apiUrl;
 	}
 	
+	public void SetApiUrl( final String apiUrl ) {
+		m_ApiUrl = apiUrl;
+	}
+	
 	// Function download and setup one quote per one request.
 	public void Download( TextView quoteTextView, TextView authorTextView ) {
 		QuoteDownloadertask downloaderTask = new QuoteDownloadertask( quoteTextView, authorTextView );

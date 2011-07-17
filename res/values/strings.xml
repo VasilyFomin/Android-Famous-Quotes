@@ -14,5 +14,16 @@
     <string name="night_mode_summary">Change programm theme to night mode.</string>
     <string name="silent_mode_title">Silent mode</string>
     <string name="silent_mode_summary">Disable programm sounds.</string>
+    <string name="sharing_screen_title">Sharing settings</string>
+    <string name="sharing_screen_summary">Fill form with credentials for social services.</string>
+    <string name="alert_dialog_username">Name:</string>
+    <string name="alert_dialog_password">Password:</string>
+    <string name="twitter_account_title">Twitter</string>
+    <string name="twitter_account_summary">Setup Twitter account.</string>
+    <string name="login_dialog_title">Input information:</string>
+    <string name="facebook_account_title">Facebook</string>
+    <string name="facebook_account_summary">Setup Facebook account.</string>
+    <string name="vkontakte_account_title">VKontakte</string>
+    <string name="vkontakte_account_summary">Setup VKontakte account.</string>
     
 </resources>

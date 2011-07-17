@@ -9,14 +9,17 @@ import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.preference.ListPreference;
 import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.ImageButton;
 import android.widget.TextView;
+import android.preference.*;
 import vasmax.famousquotes.*;
 
 public class MainScreenActivity extends Activity implements OnClickListener {
+	private QuoteDownloader m_QuoteDownloader;
     /** Called when the activity is first created. */
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -24,12 +27,17 @@ public class MainScreenActivity extends Activity implements OnClickListener {
         setContentView(R.layout.main);
         
         /*** Debug proposes. ***/
+        // TODO: Remove thisone.
         TextView quoteView = (TextView)findViewById( R.id.quote_view );
         quoteView.setText( "This is Quote text and it in English, because we have problems with cyrillic when sending SMS." );
         
         TextView authorView = (TextView)findViewById( R.id.author_view );
         authorView.setText( "Author" );        
         /************************/
+        
+        // Check language settings and use correct apiUrl for creating correct QuoteDownloader.
+        // Later we can change this settings via SetApiUrl() method.        
+        m_QuoteDownloader = new QuoteDownloader( "http://api.forismatic.com/api/1.0/?method=getQuote&lang=ru&format=xml" );
         
         // Setup click listeners for all buttons
         ImageButton settingsButton = (ImageButton)findViewById( R.id.settings_button );
@@ -62,32 +70,11 @@ public class MainScreenActivity extends Activity implements OnClickListener {
 			openShareWithDialog();			
 			break;
 				
-		case R.id.wiki_button:			
+		case R.id.wiki_button:		
+			// TODO: Need to remove this one. This logic just for testing proposes.
 			TextView quoteTextView = (TextView)findViewById(R.id.quote_view );
 			TextView quoteAuthorView = (TextView)findViewById( R.id.author_view );
-			QuoteDownloader quoteDownloader = new QuoteDownloader( "http://api.forismatic.com/api/1.0/?method=getQuote&lang=en&format=xml" );
-			quoteDownloader.Download(quoteTextView, quoteAuthorView);
-			
-			/*QuoteReceiver receiver = new QuoteReceiver();
-			Quote quote = null;
-			try {
-				quote = Quote.Parse( receiver.ExecuteWebRequest() );
-			} catch (XmlPullParserException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			} catch (IOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			} catch (Exception e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-			if( quote != null) {
-				quoteTextView.setText( quote.Text );
-				quoteAuthorView.setText( quote.Author );
-			} else {
-				Log.e( "PARSER", "Quote is null" );
-			}			*/
+			m_QuoteDownloader.Download(quoteTextView, quoteAuthorView);
 			
 			break;
 			
