@@ -13,6 +13,8 @@ import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.params.BasicHttpParams;
 import org.apache.http.params.HttpParams;
 
+import android.util.Log;
+
 public class QuoteReceiver 
 {	
 	private HttpClient _httpClient;
@@ -71,18 +73,12 @@ public class QuoteReceiver
 		try
 		{
 			HttpGet request = new HttpGet();
-			request.setURI(new URI("http://api.forismatic.com/api/1.0/"));
+			request.setURI(new URI("http://api.forismatic.com/api/1.0/?method=getQuote&lang=en&format=xml"));
 			
-			BasicHttpParams params = new BasicHttpParams();
-			params.setParameter("method", "getQuote");
-			params.setParameter("format", "xml");
-			params.setParameter("lang", "ru");		//TODO: make it variable
-			
-			request.setParams(params);
 			
 			HttpResponse response = getHttpClient().execute(request);
 			
-			response.getEntity().getContent();
+			//response.getEntity().getContent();
 			reader = new BufferedReader(new InputStreamReader(response.getEntity().getContent()));
 			
 			
@@ -94,7 +90,7 @@ public class QuoteReceiver
 				buffer.append(temp);
 			}
 		}
-		finally
+				finally
 		{
 			reader.close();
 		}

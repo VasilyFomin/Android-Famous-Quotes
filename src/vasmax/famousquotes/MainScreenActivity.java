@@ -1,5 +1,9 @@
 package vasmax.famousquotes;
 
+import java.io.IOException;
+
+import org.xmlpull.v1.XmlPullParserException;
+
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
@@ -8,9 +12,9 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
+import vasmax.famousquotes.*;
 
 public class MainScreenActivity extends Activity implements OnClickListener {
     /** Called when the activity is first created. */
@@ -58,8 +62,33 @@ public class MainScreenActivity extends Activity implements OnClickListener {
 			openShareWithDialog();			
 			break;
 				
-		case R.id.wiki_button:
-			// TODO: Implement refresh_button event handler.	
+		case R.id.wiki_button:			
+			TextView quoteTextView = (TextView)findViewById(R.id.quote_view );
+			TextView quoteAuthorView = (TextView)findViewById( R.id.author_view );
+			QuoteDownloader quoteDownloader = new QuoteDownloader( "http://api.forismatic.com/api/1.0/?method=getQuote&lang=en&format=xml" );
+			quoteDownloader.Download(quoteTextView, quoteAuthorView);
+			
+			/*QuoteReceiver receiver = new QuoteReceiver();
+			Quote quote = null;
+			try {
+				quote = Quote.Parse( receiver.ExecuteWebRequest() );
+			} catch (XmlPullParserException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			if( quote != null) {
+				quoteTextView.setText( quote.Text );
+				quoteAuthorView.setText( quote.Author );
+			} else {
+				Log.e( "PARSER", "Quote is null" );
+			}			*/
+			
 			break;
 			
 		default:
