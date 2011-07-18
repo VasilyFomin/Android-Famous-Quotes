@@ -79,5 +79,15 @@
 			android:layout_marginLeft = "20dip"
 			android:src = "@drawable/wiki_button"
 			android:background = "#00000000"	/>	
+			
+		<!-- Refresh button. -->
+		<ImageButton
+			android:id = "@+id/refresh_button"
+			android:layout_toRightOf = "@id/wiki_button"
+			android:layout_width = "wrap_content"
+			android:layout_height = "wrap_content"
+			android:layout_marginLeft = "20dip"
+			android:src = "@drawable/refresh_button"
+			android:background = "#00000000"	/>	
 	</RelativeLayout>
 </RelativeLayout>

@@ -1,22 +1,15 @@
 package vasmax.famousquotes;
 
-import java.io.IOException;
-
-import org.xmlpull.v1.XmlPullParserException;
-
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
-import android.preference.ListPreference;
 import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.ImageButton;
 import android.widget.TextView;
-import android.preference.*;
-import vasmax.famousquotes.*;
 
 public class MainScreenActivity extends Activity implements OnClickListener {
 	private QuoteDownloader m_QuoteDownloader;
@@ -49,8 +42,11 @@ public class MainScreenActivity extends Activity implements OnClickListener {
         ImageButton bookmarkButton = (ImageButton)findViewById( R.id.bookmark_button );
         bookmarkButton.setOnClickListener( this );
         
-        ImageButton refreshButton = (ImageButton)findViewById( R.id.wiki_button );
-        refreshButton.setOnClickListener( this );              
+        ImageButton refreshButton = (ImageButton)findViewById( R.id.refresh_button );
+        refreshButton.setOnClickListener( this );
+        
+        ImageButton wikiButton = (ImageButton)findViewById( R.id.wiki_button );
+        wikiButton.setOnClickListener( this );
     }
 
     /* Called when buttons clicked. */
@@ -71,11 +67,14 @@ public class MainScreenActivity extends Activity implements OnClickListener {
 			break;
 				
 		case R.id.wiki_button:		
+			// TODO: Implement wiki_button event handler.	
+			break;
+			
+		case R.id.refresh_button:
 			// TODO: Need to remove this one. This logic just for testing proposes.
 			TextView quoteTextView = (TextView)findViewById(R.id.quote_view );
 			TextView quoteAuthorView = (TextView)findViewById( R.id.author_view );
 			m_QuoteDownloader.Download(quoteTextView, quoteAuthorView);
-			
 			break;
 			
 		default:
@@ -122,8 +121,7 @@ public class MainScreenActivity extends Activity implements OnClickListener {
 		}
 		
 		switch ( serviceId ) {		
-		/* SMS Action. */
-		// TODO: Fix problems with Cyrillic letters.
+		// SMS Action. 
 		case 3:			
 
 			// Create SMS sender Intent
