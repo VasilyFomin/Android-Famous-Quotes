@@ -53,55 +53,30 @@ public class QuoteDownloader {
 		
 		try {
 			HttpGet request = new HttpGet();
-			//request.setURI(new URI("http://api.forismatic.com/api/1.0/?method=getQuote&lang=en&format=xml"));
-			try {
-				request.setURI(new URI( apiUrl ));
-			} catch (URISyntaxException e) {
-				// TODO Auto-generated catch block
-				Log.i( "URI", "Error in setup URI." );
-				e.printStackTrace();
-			}			
+			request.setURI(new URI( apiUrl ));
 			
 			HttpResponse response = null;
-			try {
-				response = httpClient.execute(request);
-			} catch (ClientProtocolException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			} catch (IOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-			
-			//response.getEntity().getContent();
-			try {
-				reader = new BufferedReader(new InputStreamReader(response.getEntity().getContent()));
-			} catch (IllegalStateException e1) {
-				// TODO Auto-generated catch block
-				e1.printStackTrace();
-			} catch (IOException e1) {
-				// TODO Auto-generated catch block
-				e1.printStackTrace();
-			}			
-			
+			response = httpClient.execute(request);
+			reader = new BufferedReader(new InputStreamReader(response.getEntity().getContent()));
 			String temp = "";
-			
-			try {
-				while ((temp = reader.readLine()) != null) {
-					buffer.append(temp);
-				}
-			} catch (IOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
+			while ((temp = reader.readLine()) != null) {
+				buffer.append(temp);
 			}
+		} catch (URISyntaxException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (ClientProtocolException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		} catch (IOException e2) {
+			// TODO Auto-generated catch block
+			e2.printStackTrace();
+		} catch (IllegalStateException e3) {
+			// TODO Auto-generated catch block
+			e3.printStackTrace();
 		} finally {
-			try {
-				reader.close();
-			} catch (IOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-		}		
+			reader.close();
+		}
  		
 		return Quote.Parse( buffer.toString() );
 	}
